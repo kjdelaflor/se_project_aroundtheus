@@ -13,6 +13,7 @@
     line-height:normal;
     color: #545454;
     max-width: 318px;
+    margin: 0;
 }
 
 @media screen and (min-width: 320px) and (max-width: 775px) {

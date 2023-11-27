@@ -1,21 +1,25 @@
-# Project 3: Around The U.S.
+Project 3: Around The U.S.
 
-### Overview  
+Overview
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+-Intro  
+-Figma  
+-Images
+
+Intro
+
+This project, Around the U.S., displays incredible sites around the United States. This project is made so all the elements are displayed correctly on popular screen sizes. Users can like their favorite cards and edit their own profiles to enhance user interaction.
+
+[Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
+
+Technologies Used:
+
+-HTML: Main Project source/structure
+
+-CSS: Style structure to customized the page and layout.
+
+-Responsive Design: Design to adheir to multiple screen sizes for better user experience on various devices.
+
+Link to my project:
+
+https://kjdelaflor.github.io/se_project_aroundtheus/

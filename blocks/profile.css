@@ -99,10 +99,9 @@
     min-width: 196px;
   }
 
-  .profile__description {
-    text-align: center;
-    max-width: 300px;
-  }
+  .profile__description {  
+    margin-bottom: 0;
+  } 
 
   .profile__edit-button {
     margin: 0;

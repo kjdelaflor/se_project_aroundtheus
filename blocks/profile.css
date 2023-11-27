@@ -100,7 +100,7 @@
   .profile__title {
     font-size: 30px;
     max-width: 241px;
-    min-width: 230px;
+    min-width: 196px;
   }
 
   .profile__description {
@@ -135,6 +135,8 @@
     display: flex;
     flex-wrap: wrap;
     padding-top: 0;
+    gap: 14px 10px;
+    max-width: 282px;
   }
 
   .profile__title {

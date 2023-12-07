@@ -30,4 +30,22 @@ const initialCards = [
   },
 ];
 
-console.log(initialCards);
+/* Elements */
+
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileCloseBtn = document.querySelector("#modal-close-button");
+
+/*Event Handlers */
+
+profileEditButton.addEventListener("click", () => {
+  profileEditModal.classList.add("modal_opened");
+});
+
+profileCloseBtn.addEventListener("click", closePopup);
+
+/*Functions */
+
+function closePopup() {
+  profileEditModal.classList.remove("modal_opened");
+}

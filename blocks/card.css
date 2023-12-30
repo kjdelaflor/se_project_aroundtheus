@@ -37,14 +37,32 @@
 }
 
 .card__like-button {
-  background: transparent url(../images/like-active.svg) center no-repeat;
+  background: transparent url(../images/like-inactive.svg) center no-repeat;
   width: 21px;
   height: 18px;
   border: none;
   cursor: pointer;
 }
 
+.card__like-button-active {
+  background-image: url(../images/2like-active.svg);
+}
+
 .card__like-button:hover {
   opacity: 0.5;
   cursor: pointer;
 }
+
+.card__list-trash {
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  border: none;
+  margin: 18px 15px 249px 245px;
+  cursor: pointer;
+}
+
+  .card__list-trash:hover {
+    opacity: 0.6;
+  }

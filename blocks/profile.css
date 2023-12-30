@@ -27,7 +27,7 @@
 
 .profile__title {
   max-width: 373px;
-  font-family: "Inter", Arial, Sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 42px;
   font-weight: 500;
   line-height: 48px;
@@ -57,7 +57,7 @@
 }
 
 .profile__description {
-  font-family: "Inter", Arial, Sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 21.78px;

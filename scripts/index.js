@@ -89,9 +89,9 @@ function getCardElement(cardData) {
   });
 
   cardImageEl.addEventListener("click", () => {
-    modalImagePreviewLink.src = cardImage.src;
-    modalImagePreviewLink.alt = cardImage.alt;
-    modalPreviewTitle.textContent = cardTitle.textContent;
+    modalImagePreviewLink.src = cardImageEl.src;
+    modalImagePreviewLink.alt = cardImageEl.alt;
+    modalPreviewTitle.textContent = cardTitleEl.textContent;
     openModal(modalPreviewImage);
   });
 
@@ -104,7 +104,7 @@ function getCardElement(cardData) {
 
 /*Event Handler*/
 
-function renderCard(cardData,wrapper) {
+function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
   wrapper.prepend(cardElement);
 }

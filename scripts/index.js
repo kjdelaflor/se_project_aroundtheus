@@ -67,10 +67,27 @@ const previewCloseButton = document.querySelector(
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalEsc);
+  modal.removeEventListener("mousedown", closeModalOutside);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeModalEsc);
+  modal.addEventListener("mousedown", closeModalOutside);
+}
+
+function closeModalEsc(e) {
+  if (e.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }
+}
+
+function closeModalOutside(e) {
+  if (e.target === e.currentTarget) {
+    closeModal(e.currentTarget);
+  }
 }
 
 function getCardElement(cardData) {

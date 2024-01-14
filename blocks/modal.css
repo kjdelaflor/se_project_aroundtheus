@@ -181,7 +181,7 @@
   left: 0;
 }
 
-.modal__input_error_active {
+.modal__input_error_visible {
   color: #ff0000;
   opacity: 100%;
 }

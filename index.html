@@ -105,29 +105,34 @@
         <p class="modal__heading">New Place</p>
         <form class="modal__form" name="modal-form" novalidate>
           <label class="modal__label">
-          <input
-            type="text"
-            name="title"
-            id="modal-input-type-title"
-            class="modal__input"
-            placeholder="Title"
-            minlength="2"
-            maxlength="40"
-            required
-          />
-          <span class="modal__input_error" id="modal-input-type-title-error"></span>
+            <input
+              type="text"
+              name="title"
+              id="modal-input-type-title"
+              class="modal__input"
+              placeholder="Title"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span
+              class="modal__input_error"
+              id="modal-input-type-title-error"
+            ></span>
           </label>
           <label class="modal__label">
-          <input
-            type="url"
-            name="url"
-            id="modal-input-type-url"
-            class="modal__input"
-            placeholder="Image URL"
-            required
-          />
-          <span class="modal__input_error" id="modal-input-type-url-error">Error</span>
-        </label>
+            <input
+              type="url"
+              name="url"
+              id="modal-input-type-url"
+              class="modal__input"
+              placeholder="Image URL"
+              required
+            />
+            <span class="modal__input_error" id="modal-input-type-url-error"
+              >Error</span
+            >
+          </label>
           <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
@@ -146,16 +151,15 @@
 
     <template id="card-template">
       <li class="card">
-        <img src="" alt="" class="card__image" />
+        <img src="" alt="" class="card__image" id="card-image" />
         <button type="button" class="card__list-trash"></button>
         <div class="card__description">
-          <h2 class="card__title"></h2>
+          <h2 class="card__title" id="card-title"></h2>
           <button class="card__like-button" type="button"></button>
         </div>
       </li>
     </template>
 
-    <script src="scripts/index.js"></script>
-    <script src="scripts/validation.js"></script>
+    <script src="./pages/index.js" type="module"></script>
   </body>
 </html>

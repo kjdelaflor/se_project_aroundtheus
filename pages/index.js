@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -62,6 +65,39 @@ const modalPreviewTitle = modalPreviewImage.querySelector(
 const previewCloseButton = document.querySelector(
   ".modal__close-preview-button"
 );
+
+/*validation*/
+
+const validationSettings = {
+  inputSelector: ".modal__input",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+  inactiveButtonClass: "modal__button_disabled",
+  submitButtonSelector: ".modal__button",
+};
+
+const editFormValidator = new FormValidator(
+  validationSettings,
+  profileEditForm
+);
+editFormValidator.enableValidation();
+
+const addFormValidator = new FormValidator(validationSettings, addCardModal);
+addFormValidator.enableValidation();
+
+/*card.js*/
+
+function handleImageClick(name, link) {
+  modalImagePreviewLink.alt = name;
+  modalImagePreviewLink.src = link;
+  modalPreviewTitle.textContent = name;
+  openModal(modalPreviewImage);
+}
+
+function createCard(cardData) {
+  const cardEl = new Card(cardData, "#card-template", handleImageClick);
+  return cardEl.getView();
+}
 
 /*Functions */
 

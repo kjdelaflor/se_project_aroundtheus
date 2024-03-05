@@ -6,10 +6,10 @@ export default class Card {
     this._handleImageClick = handleImageClick;
   }
 
-  getview() {
+  getView() {
     this._cardEl = this._getTemplate();
-    this._cardLikeButton = this._cardEl.querySelector(".card__like-button");
-    this._cardDeleteButton = this._cardEl.querySelector("card__list-trash");
+    this._likeButton = this._cardEl.querySelector(".card__like-button");
+    this._trashbutton = this._cardEl.querySelector(".card__list-trash");
 
     this._cardTitleEl = this._cardEl.querySelector("#card-title");
     this._cardImageEl = this._cardEl.querySelector("#card-image");
@@ -33,10 +33,10 @@ export default class Card {
     this._cardImageEl.addEventListener("click", () => {
       this._handleImageClick(this._name, this._link);
     });
-    this._cardLikeButton.addEventListener("click", () => {
+    this._likeButton.addEventListener("click", () => {
       this._handleLikeButton();
     });
-    this._cardDeleteButton.addEventListener("click", () => {
+    this._trashButton.addEventListener("click", () => {
       this._handleDeleteButton();
     });
   }

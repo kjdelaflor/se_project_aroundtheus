@@ -66,6 +66,8 @@ const previewCloseButton = document.querySelector(
   ".modal__close-preview-button"
 );
 
+const cardSelector = "#card-template";
+
 /*validation*/
 
 const validationSettings = {
@@ -96,7 +98,7 @@ function handleImageClick(name, link) {
 }
 
 function createCard(cardData) {
-  const cardEl = new Card(cardData, "#card-template", handleImageClick);
+  const cardEl = new Card(cardData, cardSelector, handleImageClick);
   return cardEl.getView();
 }
 

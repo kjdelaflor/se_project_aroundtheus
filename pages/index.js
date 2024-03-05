@@ -89,22 +89,21 @@ addFormValidator.enableValidation();
 /*card.js*/
 
 function handleImageClick(name, link) {
-  modalImagePreviewLink.alt = name;
   modalImagePreviewLink.src = link;
+  modalImagePreviewLink.alt = name;
   modalPreviewTitle.textContent = name;
   openModal(modalPreviewImage);
 }
 
 function createCard(cardData) {
   const cardEl = new Card(cardData, "#card-template", handleImageClick);
-  return cardEl.generateCard();
+  return cardEl.getView();
 }
 
 function renderCard(cardData, wrapper) {
   const cardEl = createCard(cardData);
   wrapper.prepend(cardEl);
 }
-
 
 /*Functions */
 
@@ -176,5 +175,3 @@ addCardModalCloseButton.addEventListener("click", () =>
 );
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
-
-

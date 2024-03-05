@@ -6,7 +6,7 @@ export default class Card {
     this._handleImageClick = handleImageClick;
   }
 
-  generateCard() {
+  getview() {
     this._cardEl = this._getTemplate();
     this._cardLikeButton = this._cardEl.querySelector(".card__like-button");
     this._cardDeleteButton = this._cardEl.querySelector("card__list-trash");
@@ -19,7 +19,7 @@ export default class Card {
     this._cardImageEl.alt = this._name;
 
     this._setEventListeners();
-    return this._cardElement;
+    return this._cardEl;
   }
 
   _getTemplate() {

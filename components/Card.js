@@ -9,7 +9,7 @@ export default class Card {
   getView() {
     this._cardEl = this._getTemplate();
     this._likeButton = this._cardEl.querySelector(".card__like-button");
-    this._trashbutton = this._cardEl.querySelector(".card__list-trash");
+    this._trashButton = this._cardEl.querySelector(".card__list-trash");
 
     this._cardTitleEl = this._cardEl.querySelector("#card-title");
     this._cardImageEl = this._cardEl.querySelector("#card-image");

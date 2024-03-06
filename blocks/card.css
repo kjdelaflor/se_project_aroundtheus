@@ -45,8 +45,8 @@
   transition: opacity 0.2s linear;
 }
 
-.card__like-button-active {
-  background-image: url(../images/2like-active.svg);
+.card__like-button_active {
+  background: url(../images/2like-active.svg);
 }
 
 .card__like-button:hover {

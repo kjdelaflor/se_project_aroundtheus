@@ -74,7 +74,7 @@ const validationSettings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
+  errorClass: "modal__input_error_visible",
   inactiveButtonClass: "modal__button_disabled",
   submitButtonSelector: ".modal__button",
 };

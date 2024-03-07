@@ -84,7 +84,8 @@ const editFormValidator = new FormValidator(
 );
 editFormValidator.enableValidation();
 
-const addFormValidator = new FormValidator(validationSettings, addCardModal);
+const addCardForm = document.querySelector("#add-card-form");
+const addFormValidator = new FormValidator(validationSettings, addCardForm);
 addFormValidator.enableValidation();
 
 /*card.js*/

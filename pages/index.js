@@ -149,8 +149,8 @@ function handleAddCardSubmit(evt) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closeModal(addCardModal);
-  e.target.reset();
-  addCardModal.disableButton();
+  evt.target.reset();
+  addFormValidator.disableButton();
 }
 
 /*Event Listeners */

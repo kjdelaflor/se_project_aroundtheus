@@ -84,8 +84,10 @@ const editFormValidator = new FormValidator(
 );
 editFormValidator.enableValidation();
 
-const addCardForm = document.querySelector("#add-card-form");
-const addFormValidator = new FormValidator(validationSettings, addCardForm);
+const addFormValidator = new FormValidator(
+  validationSettings,
+  addCardFormElement
+);
 addFormValidator.enableValidation();
 
 /*card.js*/
@@ -170,7 +172,7 @@ profileEditCloseButton.addEventListener("click", () =>
 );
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-addCardModal.addEventListener("submit", handleAddCardSubmit);
+addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
 addCardModalCloseButton.addEventListener("click", () =>

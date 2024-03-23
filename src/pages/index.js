@@ -1,82 +1,19 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
-import '../pages/index.css';
-const initialCards = [
-  {
-    name: "Yosemite Valley",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-  },
+import Section from "../components/Section.js";
+import * as constants from "../utils/constants.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
+import "../pages/index.css";
 
-  {
-    name: "Lake Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
-  },
+const cardPreview = new PopupWithImage("#modal-image-preview");
+cardPreview.setEventListeners();
 
-  {
-    name: "Bald Mountains",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
-  },
-
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-  },
-
-  {
-    name: "Vanoise National Park",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
-  },
-
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
-  },
-];
-
-/* Elements */
-
-const profileEditButton = document.querySelector("#profile-edit-button");
-const profileEditModal = document.querySelector("#profile-edit-modal");
-const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
-const profileTitle = document.querySelector(".profile__title");
-const profileDescription = document.querySelector(".profile__description");
-const profileTitleInput = document.querySelector("#profile-title-input");
-const profileDescriptionInput = document.querySelector(
-  "#profile-description-input"
-);
-const profileEditForm = profileEditModal.querySelector(".modal__form");
-const cardListEl = document.querySelector(".cards__list");
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
-const addCardModal = document.querySelector("#add-card-modal");
-const addCardFormElement = addCardModal.querySelector(".modal__form");
-const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
-const addNewCardButton = document.querySelector(".profile__add-button");
-const cardTitleInput = document.querySelector("#modal-input-type-title");
-const cardUrlInput = document.querySelector("#modal-input-type-url");
-const modalPreviewImage = document.querySelector("#modal-image-preview");
-const modalImagePreviewLink = modalPreviewImage.querySelector(
-  ".modal__preview-image"
-);
-const modalPreviewTitle = modalPreviewImage.querySelector(
-  ".modal__title-preview"
-);
-const previewCloseButton = document.querySelector(
-  ".modal__close-preview-button"
-);
-
-const cardSelector = "#card-template";
-
-/*validation*/
-
-const validationSettings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__input_error_visible",
-  inactiveButtonClass: "modal__button_disabled",
-  submitButtonSelector: ".modal__button",
-};
+const userInformation = new UserInfo({
+  name: "#profile-title",
+  description: "#profile-description",
+});
 
 const editFormValidator = new FormValidator(
   validationSettings,

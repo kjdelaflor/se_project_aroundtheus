@@ -16,28 +16,28 @@ const userInformation = new UserInfo({
 });
 
 const editFormValidator = new FormValidator(
-  validationSettings,
-  profileEditForm
+  constants.validationSettings,
+  constants.profileEditForm
 );
 editFormValidator.enableValidation();
 
 const addFormValidator = new FormValidator(
-  validationSettings,
-  addCardFormElement
+  constants.validationSettings,
+  constants.addCardFormElement
 );
 addFormValidator.enableValidation();
 
 /*card.js*/
 
 function handleImageClick(name, link) {
-  modalImagePreviewLink.src = link;
-  modalImagePreviewLink.alt = name;
-  modalPreviewTitle.textContent = name;
-  openModal(modalPreviewImage);
+  constants.modalImagePreviewLink.src = link;
+  constants.modalImagePreviewLink.alt = name;
+  constants.modalPreviewTitle.textContent = name;
+  openModal(constants.modalPreviewImage);
 }
 
 function createCard(cardData) {
-  const cardEl = new Card(cardData, cardSelector, handleImageClick);
+  const cardEl = new Card(cardData, constants.cardSelector, handleImageClick);
   return cardEl.getView();
 }
 
@@ -77,43 +77,49 @@ function closeModalOutside(e) {
 
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-  closeModal(profileEditModal);
+  constants.profileTitle.textContent = constants.profileTitleInput.value;
+  constants.profileDescription.textContent =
+    constants.profileDescriptionInput.value;
+  closeModal(constants.profileEditModal);
 }
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
-  renderCard({ name, link }, cardListEl);
-  closeModal(addCardModal);
+  const name = constants.cardTitleInput.value;
+  const link = constants.cardUrlInput.value;
+  renderCard({ name, link }, constants.cardListEl);
+  closeModal(constants.addCardModal);
   evt.target.reset();
   addFormValidator.disableButton();
 }
 
 /*Event Listeners */
 
-profileEditButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-  openModal(profileEditModal);
+constants.profileEditButton.addEventListener("click", () => {
+  constants.profileTitleInput.value = constants.profileTitle.textContent;
+  constants.profileDescriptionInput.value =
+    constants.profileDescription.textContent;
+  openModal(constants.profileEditModal);
 });
 
-previewCloseButton.addEventListener("click", () =>
-  closeModal(modalPreviewImage)
+constants.previewCloseButton.addEventListener("click", () =>
+  closeModal(constants.modalPreviewImage)
 );
 
-profileEditCloseButton.addEventListener("click", () =>
-  closeModal(profileEditModal)
+constants.profileEditCloseButton.addEventListener("click", () =>
+  closeModal(constants.profileEditModal)
 );
 
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+constants.profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+constants.addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
-addNewCardButton.addEventListener("click", () => openModal(addCardModal));
-addCardModalCloseButton.addEventListener("click", () =>
+constants.addNewCardButton.addEventListener("click", () =>
+  openModal(constants.addCardModal)
+);
+constants.addCardModalCloseButton.addEventListener("click", () =>
   closeModal(addCardModal)
 );
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+constants.initialCards.forEach((cardData) =>
+  renderCard(cardData, constants.cardListEl)
+);

@@ -49,7 +49,7 @@ constants.profileEditButton.addEventListener("click", () => {
   editFormValidator.resetValidation();
   const userData = userInformation.getUserInfo();
   constants.profileTitleInput.value = userData.name;
-  constants.profileDescriptionInput.value = userData.description.trim();
+  constants.profileDescriptionInput.value = userData.description;
 
   editModalForm.open();
 });

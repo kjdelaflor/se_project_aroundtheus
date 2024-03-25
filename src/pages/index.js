@@ -34,7 +34,14 @@ function handleImageClick(name, link) {
 }
 
 function createCard(cardData) {
-  const cardEl = new Card(cardData, constants.cardSelector, handleImageClick);
+  const cardEl = new Card(
+    {
+      name: cardData.name,
+      link: cardData.link,
+    },
+    constants.cardSelector,
+    handleImageClick
+  );
   return cardEl.getView();
 }
 
@@ -49,7 +56,7 @@ constants.profileEditButton.addEventListener("click", () => {
   editFormValidator.resetValidation();
   const userData = userInformation.getUserInfo();
   constants.profileTitleInput.value = userData.name;
-  constants.profileDescriptionInput.value = userData.description;
+  constants.profileDescriptionInput.value = userData.description.trim();
 
   editModalForm.open();
 });

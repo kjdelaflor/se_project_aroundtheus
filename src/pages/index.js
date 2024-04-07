@@ -10,7 +10,7 @@ import Api from "../components/Api.js";
 import { data } from "autoprefixer";
 import PopupConfirm from "../components/PopupConfirm.js";
 
-const api = new Api ({
+const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
     authorization: "22231872-387e-4912-9c3e-b82f6b406717",
@@ -27,7 +27,7 @@ api
     console.error(err);
   });
 
-  api
+api
   .getUserInfo()
   .then((res) => {
     userInformation.setUserInfo({

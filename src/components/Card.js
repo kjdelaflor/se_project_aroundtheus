@@ -1,22 +1,22 @@
 export default class Card {
   constructor(
-    data,
+    { name, link},
     cardSelector,
     handleImageClick,
-    removeLike,
-    isLiked,
-    _id,
     handleDeleteClick,
-    likeCard
+    removeLike,
+    likeCard,
+    isLiked,
+    _id
   ) {
-    this._name = data.name;
-    this._link = data.link;
+    this._name = name;
+    this._link = link;
     this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
+    this._handleDeleteClick = handleDeleteClick;
     this._removeLike = removeLike;
     this._isLiked = isLiked;
     this.id = _id;
-    this._handleDeleteClick = handleDeleteClick;
     this._likeCard = likeCard;
   }
 
@@ -59,7 +59,7 @@ export default class Card {
     });
   }
 
-  handleDeleteCard() {
+  deleteCard() {
     this._cardEl.remove();
     this._cardEl = null;
   }

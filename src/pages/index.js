@@ -13,7 +13,7 @@ import PopupConfirm from "../components/PopupConfirm.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "22231872-387e-4912-9c3e-b82f6b406717",
+    authorization: "066a2c2d-2c43-47e6-b207-e72b1d6fa3b0",
     "Content-Type": "application/json",
   },
 });
@@ -53,7 +53,7 @@ function handleDeleteClick(card) {
     api
       .deleteCard(card.getId())
       .then(() => {
-        card.handleDeleteCard();
+        card.deleteCard();
         deleteCardModal.close();
       })
       .catch((err) => {
@@ -120,17 +120,19 @@ function handleImageClick(name, link) {
   cardPreview.open({ name, link });
 }
 
-function createCard(cardData) {
+function createCard({ name, link,isLiked, _id}) {
   const cardEl = new Card(
     {
-      name: cardData.name,
-      link: cardData.link,
+      name,
+      link
     },
     constants.cardSelector,
     handleImageClick,
     handleDeleteClick,
     removeLike,
-    likeCard
+    likeCard,
+    isLiked,
+    _id
   );
   return cardEl.getView();
 }

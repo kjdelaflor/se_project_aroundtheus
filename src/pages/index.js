@@ -219,4 +219,3 @@ function removeLike(card) {
     });
 }
 
-//cardSection.renderItems(constants.initialCards);

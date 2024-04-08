@@ -31,8 +31,9 @@ export default class Card {
     this._cardTitleEl.textContent = this._name;
     this._cardImageEl.src = this._link;
     this._cardImageEl.alt = this._name;
-
+    this.renderLikes();
     this._setEventListeners();
+
     return this._cardEl;
   }
 

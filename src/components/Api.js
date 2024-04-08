@@ -86,4 +86,8 @@ export default class Api {
       body: JSON.stringify({ avatar: link }),
     }).then(this._checkServerResponse);
   }
+
+  loadPageContent() {
+    return Promise.all([this.getUserInfo(), this.getInitialCards()]);
+  }
 }
